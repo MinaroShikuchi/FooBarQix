@@ -16,7 +16,9 @@ public class Main {
         }
 
         for (int i = 0; i < myString.length(); i++) {
-            if (myString.charAt(i) == '3') {
+            if (myString.charAt(i) == '0') {
+                res += "*";
+            } else if (myString.charAt(i) == '3') {
                res += "Foo";
             } else if (myString.charAt(i) == '5') {
                 res += "Bar";
@@ -25,8 +27,7 @@ public class Main {
             }
         }
 
-
-        if (res == "") return myString;
+        if (res == "" || res.compareTo("*") == 0) return myString.replace('0','*');
         return res;
     }
     public void main(String[] args) {
