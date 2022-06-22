@@ -17,12 +17,21 @@ class TestMain {
         assertEquals("QixQix", Main.compute("7"));
         assertEquals("8", Main.compute("8"));
         assertEquals("Foo", Main.compute("9"));
-        assertEquals("Bar", Main.compute("10"));
+        assertEquals("Bar*", Main.compute("10"));
         assertEquals("Foo", Main.compute("13"));
         assertEquals("FooBarBar", Main.compute("15"));
         assertEquals("FooQix", Main.compute("21"));
         assertEquals("FooFooFoo", Main.compute("33"));
         assertEquals("FooBar", Main.compute("51"));
         assertEquals("BarFoo", Main.compute("53"));
+    }
+
+    @Test
+    void computeStep2() {
+        assertEquals("1*1", Main.compute("101"));
+        assertEquals("FooFoo*Foo", Main.compute("303"));
+        assertEquals("FooBarQix*Bar", Main.compute("105"));
+        assertEquals("FooQix**", Main.compute("10101"));
+
     }
 }
